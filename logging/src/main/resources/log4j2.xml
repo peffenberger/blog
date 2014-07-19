@@ -6,7 +6,10 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Logger name="cz.effy.blog" level="INFO" additivity="false">
+		<Logger name="cz.effy.blog.logging.LoggingTest" level="TRACE" additivity="false">
+			<AppenderRef ref="Console"/>
+		</Logger>
+		<Logger name="cz.effy.blog" level="ERROR" additivity="false">
 			<AppenderRef ref="Console"/>
 		</Logger>
 		<Root level="error">
