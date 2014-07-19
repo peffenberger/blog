@@ -1,5 +1,9 @@
 package cz.effy.blog.binom.computation;
 
+import cz.effy.blog.support.common.ExecutionTime;
+import cz.effy.blog.support.common.MemoryPrint;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import java.math.BigDecimal;
@@ -10,6 +14,8 @@ import static org.testng.Assert.assertEquals;
  * Created by petr on 20/06/2014.
  */
 public class BinomicalCoefficientTest {
+
+	final Logger logger = LogManager.getLogger(getClass());
 
 	@Test
 	public void intTest() {
@@ -40,10 +46,15 @@ public class BinomicalCoefficientTest {
 	}
 
 	private <T> T binomicalCoefficientTest(BinomicalCoefficient<T> computationBean, int cyclesNo, int m, int n) {
+		ExecutionTime executionTime = new ExecutionTime();
 		T result = null;
 		for (int i = 0; i < cyclesNo; i++) {
 			result = computationBean.binomicalCoeficient(m, n);
 		}
+//		System.out.println(new MemoryPrint());
+//		System.out.println(executionTime);
+		logger.info(new MemoryPrint());
+		logger.info(executionTime);
 		return result;
 	}
 }
