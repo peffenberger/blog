@@ -39,10 +39,10 @@ public class BinomicalCoefficientTest {
 		BigDecimal res2 = new BigDecimal(1166803110);
 		BigDecimal res3 = new BigDecimal(3);
 		BigDecimal res4 = new BigDecimal(4076350421L);
-		assertEquals(binomicalCoefficientTest(new BigDecimalBinomicalCoefficient(), 10000000, 3, 3), res1);
-		assertEquals(binomicalCoefficientTest(new BigDecimalBinomicalCoefficient(), 10000000, 33, 16), res2);
-		assertEquals(binomicalCoefficientTest(new BigDecimalBinomicalCoefficient(), 10000000, 3, 2), res3);
-		assertEquals(binomicalCoefficientTest(new BigDecimalBinomicalCoefficient(), 10000000, 46, 36), res4);
+		assertEquals(binomicalCoefficientTest(new BigDecimalBinomicalCoefficient(), 100000, 3, 3), res1);
+		assertEquals(binomicalCoefficientTest(new BigDecimalBinomicalCoefficient(), 100000, 33, 16), res2);
+		assertEquals(binomicalCoefficientTest(new BigDecimalBinomicalCoefficient(), 100000, 3, 2), res3);
+		assertEquals(binomicalCoefficientTest(new BigDecimalBinomicalCoefficient(), 100000, 46, 36), res4);
 	}
 
 	private <T> T binomicalCoefficientTest(BinomicalCoefficient<T> computationBean, int cyclesNo, int m, int n) {
